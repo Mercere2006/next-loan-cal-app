@@ -33,12 +33,12 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
   }, [filteredSchedule, safeCurrentPage, rowsPerPage]);
 
   return (
-    <section className="bg-white/85 backdrop-blur-xl border border-white/90 rounded-3xl p-5 sm:p-8 shadow-[0_20px_50px_rgba(79,70,229,0.06)] space-y-5">
+    <section className="bg-white/85 backdrop-blur-xl border border-white/90 rounded-3xl p-5 sm:p-8 shadow-[0_20px_50px_rgba(16,185,129,0.06)] space-y-5">
       {/* Header of Amortization Schedule */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-indigo-50">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-emerald-100/70">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex items-center justify-center w-7 h-7 rounded-xl bg-teal-100 text-teal-800 text-xs font-black">
+            <span className="flex items-center justify-center w-7 h-7 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-black">
               2
             </span>
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
@@ -67,7 +67,7 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
                   setCurrentPage(1);
                 }}
                 placeholder="ค้นหางวดที่..."
-                className="w-32 sm:w-36 pl-8 pr-3 py-2 text-xs rounded-xl border border-indigo-100 bg-white focus:ring-2 focus:ring-indigo-300 focus:outline-hidden"
+                className="w-32 sm:w-36 pl-8 pr-3 py-2 text-xs rounded-xl border border-emerald-200/80 bg-white focus:ring-2 focus:ring-emerald-400 focus:outline-hidden"
               />
               <svg
                 className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2"
@@ -91,7 +91,7 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
                 setRowsPerPage(Number(e.target.value));
                 setCurrentPage(1);
               }}
-              className="px-3 py-2 text-xs font-semibold rounded-xl border border-indigo-100 bg-white text-slate-700 focus:ring-2 focus:ring-indigo-300 focus:outline-hidden"
+              className="px-3 py-2 text-xs font-semibold rounded-xl border border-emerald-200/80 bg-white text-slate-700 focus:ring-2 focus:ring-emerald-400 focus:outline-hidden"
             >
               <option value={12}>12 งวด / หน้า (1 ปี)</option>
               <option value={24}>24 งวด / หน้า (2 ปี)</option>
@@ -104,7 +104,7 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
             <button
               type="button"
               onClick={() => downloadScheduleCSV(schedule)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all duration-200"
             >
               <svg
                 className="w-3.5 h-3.5"
@@ -126,13 +126,13 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
       </div>
 
       {/* Table Container (Responsive with horizontal scrolling on small screens) */}
-      <div className="overflow-x-auto rounded-2xl border border-indigo-50 shadow-inner bg-white">
+      <div className="overflow-x-auto rounded-2xl border border-emerald-100/70 shadow-inner bg-white">
         <table className="w-full text-left text-sm border-collapse min-w-[620px]">
           <thead>
-            <tr className="bg-gradient-to-r from-[#f5f7ff] via-[#edf2ff] to-[#e6fbf4] text-slate-700 text-xs font-bold uppercase tracking-wider border-b border-indigo-100">
+            <tr className="bg-gradient-to-r from-[#f0fdf9] via-[#e6fcf5] to-[#dcfce7] text-slate-700 text-xs font-bold uppercase tracking-wider border-b border-emerald-100">
               <th className="py-3.5 px-4 text-center w-20">งวดที่</th>
               <th className="py-3.5 px-4 text-right">ค่างวดต่อเดือน (บาท)</th>
-              <th className="py-3.5 px-4 text-right text-indigo-700">เงินต้น (บาท)</th>
+              <th className="py-3.5 px-4 text-right text-emerald-800">เงินต้น (บาท)</th>
               <th className="py-3.5 px-4 text-right text-teal-700">ดอกเบี้ย (บาท)</th>
               <th className="py-3.5 px-4 text-right">เงินต้นคงเหลือ (บาท)</th>
             </tr>
@@ -142,10 +142,10 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
               displayedSchedule.map((row) => (
                 <tr
                   key={row.month}
-                  className="hover:bg-indigo-50/40 transition-colors duration-150 odd:bg-white even:bg-slate-50/50"
+                  className="hover:bg-emerald-50/50 transition-colors duration-150 odd:bg-white even:bg-slate-50/50"
                 >
                   <td className="py-3 px-4 text-center font-bold text-slate-600">
-                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-semibold">
                       {row.month}
                     </span>
                   </td>
@@ -155,7 +155,7 @@ export default function AmortizationTable({ schedule }: AmortizationTableProps) 
                       maximumFractionDigits: 2,
                     })}
                   </td>
-                  <td className="py-3 px-4 text-right font-semibold text-indigo-700">
+                  <td className="py-3 px-4 text-right font-semibold text-emerald-800">
                     {row.principal.toLocaleString("th-TH", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,

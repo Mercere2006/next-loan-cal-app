@@ -37,8 +37,8 @@ export default function LoanCalculator() {
     <div className="space-y-8">
       {/* Page Title & Intro */}
       <div className="text-center sm:text-left space-y-1">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50/80 border border-indigo-100 text-xs font-semibold text-indigo-800 mb-1">
-          <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-200/80 text-xs font-semibold text-emerald-900 mb-1">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           ระบบคำนวณค่างวดสินเชื่อและดอกเบี้ย
         </div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">

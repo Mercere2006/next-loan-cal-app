@@ -20,19 +20,19 @@ export default function LoanSummaryCard({
   return (
     <section className="space-y-5">
       {/* ค่างวดรายเดือน (M) - แสดงเด่นชัดที่สุดในหน้า */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-700 via-indigo-600 to-teal-600 text-white p-7 sm:p-9 shadow-[0_25px_60px_rgba(79,70,229,0.25)]">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-600 text-white p-7 sm:p-9 shadow-[0_25px_60px_rgba(16,185,129,0.22)]">
         {/* Subtle decorative glowing background orbs */}
         <div className="pointer-events-none absolute -right-8 -bottom-8 w-48 h-48 rounded-full bg-white/10 blur-xl" />
-        <div className="pointer-events-none absolute -left-8 -top-8 w-40 h-40 rounded-full bg-teal-400/20 blur-xl" />
+        <div className="pointer-events-none absolute -left-8 -top-8 w-40 h-40 rounded-full bg-teal-300/25 blur-xl" />
 
         <div className="relative z-10 space-y-3">
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-xs font-semibold backdrop-blur-md border border-white/20">
-              <span className="w-2 h-2 rounded-full bg-teal-300 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
               ค่างวดรายเดือน (M)
             </span>
             {totalMonths > 0 && (
-              <span className="text-xs text-indigo-100 font-medium">
+              <span className="text-xs text-emerald-100 font-medium">
                 รวมทั้งสิ้น {totalMonths} งวด
               </span>
             )}
@@ -49,11 +49,11 @@ export default function LoanSummaryCard({
                     })
                   : "0.00"}
               </span>
-              <span className="text-lg sm:text-2xl font-bold text-teal-200">
+              <span className="text-lg sm:text-2xl font-bold text-emerald-200">
                 บาท / เดือน
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-indigo-100 mt-2 font-normal">
+            <p className="text-xs sm:text-sm text-emerald-100 mt-2 font-normal">
               ยอดผ่อนชำระคงที่ต่อเดือนโดยประมาณ (คำนวณจากสูตร Annuity)
             </p>
           </div>
@@ -92,15 +92,15 @@ export default function LoanSummaryCard({
         </div>
 
         {/* ยอดชำระรวมทั้งหมด (เงินต้น + ดอกเบี้ย) */}
-        <div className="p-6 rounded-3xl bg-white/85 backdrop-blur-xl border border-indigo-100/90 shadow-[0_15px_35px_rgba(79,70,229,0.06)] flex flex-col justify-between space-y-3">
+        <div className="p-6 rounded-3xl bg-white/85 backdrop-blur-xl border border-emerald-100/90 shadow-[0_15px_35px_rgba(16,185,129,0.06)] flex flex-col justify-between space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-800">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
               ยอดชำระรวมทั้งหมด
             </span>
             <span className="text-lg">🏷️</span>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-indigo-950 tracking-tight">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-950 tracking-tight">
               {Math.max(0, totalPayment).toLocaleString("th-TH", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
@@ -120,7 +120,7 @@ export default function LoanSummaryCard({
       <div className="p-5 rounded-3xl bg-white/80 backdrop-blur-xl border border-white/80 shadow-xs space-y-2.5">
         <div className="flex justify-between items-center text-xs font-bold text-slate-700">
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-indigo-600 inline-block" />
+            <span className="w-3 h-3 rounded-full bg-emerald-600 inline-block" />
             เงินต้น: {principalRatio.toFixed(1)}%
           </span>
           <span className="flex items-center gap-1.5">
@@ -128,13 +128,13 @@ export default function LoanSummaryCard({
             ดอกเบี้ยรวม: {interestRatio.toFixed(1)}%
           </span>
         </div>
-        <div className="w-full h-3.5 bg-slate-100 rounded-full overflow-hidden flex p-0.5 gap-0.5 border border-slate-200/60">
+        <div className="w-full h-3.5 bg-emerald-50/80 rounded-full overflow-hidden flex p-0.5 gap-0.5 border border-emerald-100">
           <div
-            className="h-full bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-emerald-600 to-teal-500 rounded-full transition-all duration-500"
             style={{ width: `${principalRatio}%` }}
           />
           <div
-            className="h-full bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-teal-400 to-emerald-300 rounded-full transition-all duration-500"
             style={{ width: `${interestRatio}%` }}
           />
         </div>
